@@ -34,12 +34,35 @@ a {
   font-family: "Playfair Display SC", serif;
   font-weight: 700;
   font-style: normal;
+  font-size: 36px;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 450;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-italic {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
 }
 
 /* root variables */
 :root {
   --color-pink: rgba(183, 75, 142, 0.676);
   --color-dark: #2e2e2e;
+  --color-dark-gray: rgb(58, 58, 58);
+  --sea: #66a5ad;
+  --light-blue: #c4dfe6;
 
   --body-bg: white;
   --text-color: var(--color-dark);
@@ -47,22 +70,10 @@ a {
 
   /* for dark mode */
   --dark-bg: var(--color-dark);
-  --dark-text-color: #fff;
+  --dark-text-color: #f1f1f2;
   --dark-border-color: #fff;
 
   --shadow: 4px -2px 40px 1px rgba(28, 28, 28, 0.628);
-}
-
-/* <!-- for dark mode toggler --> */
-#darkmode-toggler {
-  position: fixed;
-  top: 7rem;
-  left: 4rem;
-}
-#darkmode-toggler:hover {
-  cursor: pointer;
-  transform: scale(1.5);
-  transition: all 0.3s;
 }
 
 .title {
@@ -71,7 +82,7 @@ a {
 }
 
 .title span {
-  border-bottom: 3px solid var(--color-pink);
+  border-bottom: 3px solid var(--sea);
 }
 
 .wrapper {
@@ -85,20 +96,25 @@ a {
 header {
   box-shadow: var(--shadow);
 
-  position: sticky;
+  display: flex;
+  align-items: center;
   top: 0;
+  position: fixed;
+  width: 100vw;
   background: var(--body-bg);
 }
 
 header .header {
-  justify-content: space-between;
+  margin: 0 40px;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 0;
 }
 
 .logo {
   font-size: 1.3rem;
   position: relative;
+  align-items: center;
 }
 
 /* .logo > div:nth-child(1) { */
@@ -109,41 +125,33 @@ header .header {
 
 .line::before {
   content: "";
-  background-color: var(--color-pink);
+  background-color: var(--sea);
   width: 4px;
   height: 100%;
   position: absolute;
-  left: 33%;
+  left: 43%;
+  top: 4px;
 }
 
 .navigation {
   list-style: none;
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-size: 16px;
 }
 
 .navigation li:hover {
-  color: var(--color-pink);
+  color: var(--sea);
   transition: all 0.3s;
-}
-
-#darkMode {
-  display: none;
-}
-
-#darkMode:checked + .wrapper {
-  --body-bg: var(--dark-bg);
-  --text-color: var(--dark-text-color);
-  --border-color: var(--dark-border-color);
 }
 
 /* <!-- hero --> */
 .hero-section {
-  margin-top: 5rem;
+  margin-top: 8rem;
   max-height: 60vh;
 }
 
 .hero {
-  background: var(--color-pink);
+  background: var(--light-blue);
   grid-template-areas: "right left";
   padding: 2rem 2rem;
 }
@@ -209,11 +217,11 @@ header .header {
 }
 
 .banner .info-content div p {
-  color: var(--color-pink);
+  color: var(--sea);
 }
 
 .banner .icon-container {
-  background: var(--color-pink);
+  background: var(--sea);
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -282,7 +290,7 @@ header .header {
 
 /* <!-- about me --> */
 .about {
-  background: var(--color-pink);
+  background: var(--light-blue);
   padding: 2rem;
 }
 
@@ -354,7 +362,7 @@ header .header {
 }
 
 .contact .email-section .send {
-  background: var(--color-pink);
+  background: var(--sea);
   width: 3rem;
   height: 3rem;
   font-size: 1.6rem;
@@ -389,7 +397,7 @@ footer .top {
   /* padding: 2rem 2.4rem; */
   width: 70px;
   height: 70px;
-  background: var(--color-pink);
+  background: var(--sea);
   border-radius: 50%;
   position: fixed;
   bottom: 100px;
@@ -480,4 +488,59 @@ footer .top {
   #hamburgerMenu:checked + .menu {
     left: calc(100vw - 250px);
   }
+}
+
+.label {
+  display: block;
+  position: relative;
+  width: 58px;
+  height: 30px;
+  top: 100px;
+  left: 20px;
+  background: rgb(235, 233, 233);
+  cursor: pointer;
+  border-radius: 200px;
+  box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(189, 189, 189, 0.16);
+
+  transition: 0.3s;
+}
+
+.label:after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  top: 4px;
+  left: 4px;
+  position: absolute;
+  background: linear-gradient(180deg, rgb(245, 186, 76), rgb(219, 208, 4));
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+#darkMode {
+  display: none;
+}
+
+#darkMode:checked + .label {
+  background: rgb(139, 139, 139);
+}
+
+#darkMode:checked + .label:after {
+  left: 28px;
+  transform: translateX(2px);
+  box-shadow: inset 9px -4px 0px 0px black;
+  /* background: linear-gradient(180deg, rgb(116, 115, 115), rgb(177, 177, 177)); */
+  background: rgb(139, 139, 139);
+}
+
+#darkMode:checked + .label + .wrapper {
+  header,
+  .banner,
+  .project-container > div {
+    background: var(--color-dark-gray);
+  }
+  --body-bg: var(--dark-bg);
+  --text-color: var(--dark-text-color);
+  --border-color: var(--dark-border-color);
 }
