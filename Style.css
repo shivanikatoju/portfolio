@@ -8,6 +8,7 @@ html {
 
 body {
   margin: 0;
+  position: absolute;
 }
 
 .container {
@@ -79,6 +80,7 @@ a {
 .title {
   text-align: center;
   margin-bottom: 2rem;
+  /* margin-left: 40px; */
 }
 
 .title span {
@@ -95,9 +97,6 @@ a {
 /* <!-- navbar --> */
 header {
   box-shadow: var(--shadow);
-
-  display: flex;
-  align-items: center;
   top: 0;
   position: fixed;
   width: 100vw;
@@ -106,9 +105,10 @@ header {
 
 header .header {
   margin: 0 40px;
-  align-items: center;
-  justify-content: space-between;
   padding: 1rem 0;
+  align-items: center;
+
+  justify-content: space-between;
 }
 
 .logo {
@@ -148,15 +148,50 @@ header .header {
 .hero-section {
   margin-top: 8rem;
   max-height: 60vh;
+  color: #000;
 }
 
 .hero {
   background: var(--light-blue);
-  grid-template-areas: "right left";
+  grid-template-areas:
+    "left top right"
+    "left bottom right";
   padding: 2rem 2rem;
+  height: 40vh;
+}
+
+.top {
+  grid-area: top;
+  text-align: center;
+}
+
+.bottom {
+  grid-area: bottom;
+  align-items: center;
 }
 
 .left {
+  flex-direction: column;
+  grid-area: left;
+  justify-content: center;
+  gap: 1px;
+  text-align: end;
+  width: 30%;
+}
+.middle {
+  grid-area: middle;
+  width: 40%;
+  justify-content: center;
+}
+.right {
+  flex-direction: column;
+  grid-area: right;
+  justify-content: center;
+  gap: 1px;
+  width: 30%;
+}
+
+/* .left {
   grid-area: left;
   flex-direction: column;
   margin-left: 10vw;
@@ -192,18 +227,28 @@ header .header {
 
 .right img {
   height: 100%;
-}
+} */
 
 /* <!-- banner --> */
 .banner {
   margin-top: 3rem;
   /* border: 2px solid var(--border-color); */
-  border-radius: 50px;
+  border-radius: 118px;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 4rem;
 
   box-shadow: var(--shadow);
+}
+.info-content,
+.btext,
+.info-content > div {
+  justify-content: center;
+}
+
+.btext {
+  flex-direction: column;
+  gap: 1px;
 }
 
 .banner i {
@@ -218,10 +263,11 @@ header .header {
 
 .banner .info-content div p {
   color: var(--sea);
+  margin: 0;
 }
 
 .banner .icon-container {
-  background: var(--sea);
+  background: #66a5ad9c;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -231,14 +277,14 @@ header .header {
 }
 
 .info-divider {
-  background: gray;
+  background: rgb(168, 165, 165);
   width: 2px;
   height: 50px;
 }
 
 /* <!-- skills --> */
 .skills {
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 .skills-container {
@@ -291,7 +337,9 @@ header .header {
 /* <!-- about me --> */
 .about {
   background: var(--light-blue);
-  padding: 2rem;
+  padding: 8px 2rem;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
 }
 
 .about-content {
@@ -323,6 +371,15 @@ header .header {
   cursor: pointer;
   background: gray;
   transition: all 0.5s;
+}
+
+.dwnldcv button {
+  background: var(--dark-bg);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 22px;
+  cursor: pointer;
 }
 
 /* <!-- contact --> */
@@ -397,7 +454,7 @@ footer .top {
   /* padding: 2rem 2.4rem; */
   width: 70px;
   height: 70px;
-  background: var(--sea);
+  background: #66a5ad92;
   border-radius: 50%;
   position: fixed;
   bottom: 100px;
@@ -439,7 +496,7 @@ footer .top {
     flex-direction: column;
     align-items: flex-start;
     /* padding: 32px 200px; */
-    margin-top: 23rem;
+    margin-top: 3rem;
     padding-left: 20%;
   }
 
@@ -492,7 +549,7 @@ footer .top {
 
 .label {
   display: block;
-  position: relative;
+  position: sticky;
   width: 58px;
   height: 30px;
   top: 100px;
@@ -540,6 +597,10 @@ footer .top {
   .project-container > div {
     background: var(--color-dark-gray);
   }
+
+  /* .hero {
+    background: var(--sea);
+  } */
   --body-bg: var(--dark-bg);
   --text-color: var(--dark-text-color);
   --border-color: var(--dark-border-color);

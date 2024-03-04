@@ -65,9 +65,28 @@
       </header>
 
       <!-- hero -->
-      <section class="inter-tight-italic hero-section container" id="hero">
-        <div class="grid hero">
-          <div class="left flex">
+      <section class="inter-italic hero-section container">
+        <div class="flex grid hero">
+          <div class="top">
+            Hey there!<br />
+            I am <span style="font-weight: 890">Shivani Katoju</span>,
+          </div>
+
+          <div class="flex bottom">
+            <div class="left flex">
+              <div style="font-weight: 890">Front-End Developer,</div>
+              <div style="font-weight: 500">based in Sydney.</div>
+            </div>
+            <div class="middle flex">
+              <img src="./assets/Humaaans - Space.png" alt="" height="200px" />
+            </div>
+            <div class="right flex">
+              <div style="font-weight: 890">and aspiring UI/UX</div>
+              <div style="font-weight: 500">Designer.</div>
+            </div>
+          </div>
+
+          <!-- <div class="left flex">
             <div>Hey there! I am <span>Shivani Katoju</span>,</div>
             <div class="tag">Front-End Developer</div>
             <span>based in Sydney.</span>
@@ -81,45 +100,85 @@
           </div>
           <div class="right flex">
             <img src="./assets/Humaaans - Space.png" alt="" />
-          </div>
+          </div> -->
         </div>
       </section>
 
       <!-- banner -->
-      <section class="flex banner container" id="banner">
-        <div class="flex info-content">
-          <div class="flex icon-container">
+      <section class="banner flex container roboto-regular" id="banner">
+        <div class="info-content flex">
+          <div class="icon-container flex">
             <i class="fa-solid fa-award"></i>
           </div>
-          <div>
+          <div class="btext flex">
             <span>IT</span>
             <p>Graduation</p>
           </div>
         </div>
         <div class="info-divider"></div>
-        <div class="flex info-content">
-          <div class="flex icon-container">
+        <div class="info-content flex">
+          <div class="icon-container flex">
             <i class="fa-solid fa-award"></i>
           </div>
-          <div>
+          <div class="btext flex">
             <span>5+</span>
             <p>Projects</p>
           </div>
         </div>
         <div class="info-divider"></div>
-        <div class="flex info-content">
-          <div class="flex icon-container">
+        <div class="info-content flex">
+          <div class="icon-container flex">
             <i class="fa-solid fa-award"></i>
           </div>
-          <div>
+          <div class="btext flex">
             <span>1+ Years</span>
             <p>Experience</p>
           </div>
         </div>
       </section>
 
+      <!-- about me -->
+      <section class="about roboto-regular" id="about">
+        <h2 class="title">
+          <span>About me</span>
+        </h2>
+        <div class="flex about-content">
+          <div class="flex imgside">
+            <img src="./assets/Humaaans - Space.png" alt="" />
+          </div>
+          <div class="contentside">
+            <h2>Shivani Katoju</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delecs,
+              aspernatur minus, aliquid dolores assumenda. Facilis deserunt
+              pariatur, totam dolores praesentium dignissimomet consectetur
+              adipisoluptatibus exercitationem optio porro. Earum explicabo
+              deleniti, hic ratione modi doloribus! Officiis nostrum nesciunt
+              hic qui est optio? Consequatur modi enim reprehenderit labore.
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque,
+              quis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p>Sydney, Australia</p>
+            <div>
+              <div class="tag">Interest</div>
+              <div class="flex">
+                <span>Coding</span><span>Painting</span><span>Drawing</span>
+              </div>
+            </div>
+            <div class="dwnldcv">
+              <a href="./assets/Humaaans - Space.png" download>
+                <button>
+                  Download CV <i class="fa-solid fa-download"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- skills -->
-      <section class="skills" id="skills">
+      <section class="skills roboto-regular" id="skills">
         <h2 class="title">
           <span>Skills</span>
         </h2>
@@ -158,11 +217,11 @@
       </section>
 
       <!-- my recent work -->
-      <section class="container projects" id="projects">
+      <section class="projects roboto-regular" id="projects">
         <h2 class="title">
           <span> My Projects </span>
         </h2>
-        <div class="grid project-container">
+        <div class="grid project-container container">
           <div class="project-card1">
             <div class="top">
               <img src="./assets/p.png" alt="" width="100%" />
@@ -202,42 +261,8 @@
         </div>
       </section>
 
-      <!-- about me -->
-      <section class="about" id="about">
-        <h2 class="title">
-          <span>About me</span>
-        </h2>
-        <div class="container flex about-content">
-          <div class="flex imgside">
-            <img src="./assets/Humaaans - Space.png" alt="" />
-          </div>
-          <div class="contentside">
-            <h2>Shivani Katoju</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delecs,
-              aspernatur minus, aliquid dolores assumenda. Facilis deserunt
-              pariatur, totam dolores praesentium dignissimomet consectetur
-              adipisoluptatibus exercitationem optio porro. Earum explicabo
-              deleniti, hic ratione modi doloribus! Officiis nostrum nesciunt
-              hic qui est optio? Consequatur modi enim reprehenderit labore.
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque,
-              quis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <p>Sydney, Australia</p>
-            <div>
-              <div class="tag">Interest</div>
-              <div class="flex">
-                <span>Coding</span><span>Painting</span><span>Drawing</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- contact -->
-      <section class="container contact" id="contact">
+      <section class="contact container roboto-regular" id="contact">
         <h2 class="title">
           <span>Contact</span>
         </h2>
@@ -262,7 +287,7 @@
       </section>
 
       <!-- footer -->
-      <footer class="flex">
+      <footer class="flex roboto-regular">
         <div class="top container flex">
           <div class="links">
             <h3>Links</h3>
